@@ -38,6 +38,84 @@
     <link rel="stylesheet" href="../reg.css" />
     <!-- <link rel="stylesheet" href="./event-name.css"> -->
     <link rel="stylesheet" href="./event-name.css" />
+    <style>
+      /* * WHatsapp Button CSS */
+      .wa-container {
+        position: absolute;
+      }
+      
+      .wa-container span {
+        position: fixed;
+        bottom: 25px;
+        left: -900px;
+        width: auto;
+        height: 35px;
+        padding: 0 15px;
+        background-color: #25d366;
+        color: #fff;
+        border-radius: 35px;
+        text-align: center;
+        font-size: 0.8rem;
+        line-height: 35px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+        transition: all 0.3s ease;
+      }
+      
+      .wa-container span.active {
+        left: 80px;
+      }
+      
+      .wa-container span i {
+        margin: 0 10px;
+        animation: lrmove 1s ease-in-out infinite;
+      }
+      
+      @keyframes lrmove {
+        0% {
+          transform: translateX(0);
+        }
+      
+        50% {
+          transform: translateX(10px);
+        }
+      
+        100% {
+          transform: translateX(0);
+        }
+      }
+      
+      .wa-container span:hover {
+        transform: scale(1.1);
+      }
+      
+      #wa-btn {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        width: 45px;
+        height: 45px;
+        background-color: #25d366;
+        color: #fff;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 2rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+        transition: all 0.3s ease;
+        line-height: 43px;
+      }
+      
+      #wa-btn i {
+        line-height: 43px;
+        font-size: 1.5rem;
+      }
+      
+      #wa-btn:hover {
+        transform: scale(1.1);
+      }
+      
+      </style>
   </head>
   <body>
     <nav class="navbar">
@@ -135,6 +213,24 @@
           >
         </div>
       </div>
+
+                  
+            <!-- < !-- whatsapp button --> 
+            <div class="wa-container">
+              <span class="active"><i class="fa-solid fa-arrow-left"></i>Join Us To Know More</span>
+              <a id="wa-btn" href="https://chat.whatsapp.com/GNBnL1Yjo319y87SEL19pj" role="button" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+            </div>
+            
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script>
+              // Whatsapp Text Animation
+              setInterval(function () {
+                $(".wa-container span").toggleClass("active");
+              }, 4000);
+            </script>
+            
     </body>
     <footer class="footer">
       <div class="footer-container">
